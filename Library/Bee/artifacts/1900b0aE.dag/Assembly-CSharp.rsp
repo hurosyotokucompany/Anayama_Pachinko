@@ -369,6 +369,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/script/Ball.cs"
 "Assets/script/Blocks.cs"
+"Assets/script/DestroyObject.cs"
+"Assets/script/FallAnayama.cs"
 "Assets/script/Player.cs"
 "Assets/script/RiseAnayama.cs"
 -langversion:9.0

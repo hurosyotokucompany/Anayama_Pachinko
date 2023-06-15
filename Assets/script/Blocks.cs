@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Blocks : MonoBehaviour
+
+public class Blocks : MonoBehaviour
 {
+    public GameObject effectPrefab;  // エフェクトのプレハブを指定します。
     Rigidbody myRigidbody;
-    public float speed=-5f;
-    // 何かとぶつかった時に呼ばれるビルトインメソッド
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-        // myRigidbody = GetComponent<Rigidbody>();
-        // myRigidbody.velocity = new Vector3(0f, -speed, 0f);
-        // ゲームオブジェクトを削除するメソッド
-        Destroy(gameObject);
-    }}
+            Destroy(gameObject);
+
+            // ブロックの位置にエフェクトを生成します。
+            var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
+
+            // エフェクトのアニメーションを開始します。
+            var animator = effect.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.Play("EffectAnimation");  // "EffectAnimation"はあなたが作成したアニメーションクリップの名前に置き換えてください。
+            }
+        }
+    }
 }

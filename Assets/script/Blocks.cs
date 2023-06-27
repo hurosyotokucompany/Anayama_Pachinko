@@ -18,11 +18,11 @@ public class Blocks : MonoBehaviour
             var effect = Instantiate(effectPrefab, transform.position, Quaternion.identity);
 
             // エフェクトのアニメーションを開始します。
-            var animator = effect.GetComponent<Animator>();
-            if (animator != null)
-            {
-                animator.Play("EffectAnimation");  // "EffectAnimation"はあなたが作成したアニメーションクリップの名前に置き換えてください。
-            }
+            // var animator = effect.GetComponent<Animator>();
+            // if (animator != null)
+            // {
+            //     animator.Play("EffectAnimation");  // "EffectAnimation"はあなたが作成したアニメーションクリップの名前に置き換えてください。
+            // }
         }
     }
 }
